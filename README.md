@@ -8,28 +8,8 @@ This project provides Mandarin tone feedback at both sentence and character leve
 Given read speech and a reference text, it extracts F0 contours, matches each syllable 
 to multi-speaker tone templates, and produces a 0–1 tone-correctness score with clear visuals.
 
-## Demo (GitHub Pages)
-[<https://<your-username>.github.io/elec5305-project-<SID>/>](https://github.com/guli0019/elec5305-project-540281325)
-> Per the course guide, this link is also included in the proposal PDF.
+## References 
+1. Witt, S. M., & Young, S. J. (2000). Phone-level pronunciation scoring and assessment for interactive language learning. Speech communication, 30(2-3), 95-108.
+2. McAuliffe, M., Socolof, M., Mihuc, S., Wagner, M., & Sonderegger, M. (2017, August). Montreal forced aligner: Trainable text-speech alignment using kaldi. In Interspeech (Vol. 2017, pp. 498-502).
+3. Mauch, M., & Dixon, S. (2014, May). pYIN: A fundamental frequency estimator using probabilistic threshold distributions. In 2014 ieee international conference on acoustics, speech and signal processing (icassp) (pp. 659-663). IEEE. 
 
-## Repository Structure
-/proposal/ # Project proposal PDF
-/notebooks/ # Analysis and prototypes (optional)
-/src/ # Core scripts (optional)
-/data/ # Small sample data or links (no large files)
-/docs/ # Optional static assets for Pages
-
-## Quick Start
-- Open the notebooks or run the scripts in `/src` to reproduce basic tone scoring.
-- Outputs (per-syllable scores, sentence score, F0 JSON) are stored under `/outputs`.
-
-## References (≥3 peer-reviewed)
-1. Witt & Young (2000), *Speech Communication* — phone-level pronunciation scoring.  
-2. McAuliffe et al. (2017), *Interspeech* — Montreal Forced Aligner (alignment background).  
-3. Mauch & Dixon (2014), *ICASSP* — pYIN pitch estimation.  
-4. Tone Perfect (MSU Libraries) — native monosyllable tone corpus.
-
-## Submission Checklist
-- [ ] Public repo created and proposal PDF uploaded  
-- [ ] README completed  
-- [ ] GitHub Pages enabled and URL added to the PDF  
