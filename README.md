@@ -1,12 +1,31 @@
-# Tone-First Mandarin Pronunciation Feedback System
+# Noise-Robust Voice Activity Detection (VAD)
 
-**Course:** ELEC5305 – Acoustics, Speech and Signal Processing  
-**Student:** Guanzhen Li · **SID:** 540281325 · **GitHub:** @guli0019
+Repo: https://github.com/guli0019/elec5305-project-540281325 
+Student: Guanzhen Li (SID: 540281325) • Course: ELEC5305
 
-## Overview
-This project provides Mandarin tone feedback at both sentence and character levels. 
-Given read speech and a reference text, it extracts F0 contours, matches each syllable 
-to multi-speaker tone templates, and produces a 0–1 tone-correctness score with clear visuals.
+## Snapshot
+Minimal, reproducible VAD baseline (STE + ZCR, adaptive thresholds + smoothing).  
+Planned as a **front-end** for pitch tracking / singing assessment.
+
+## Current progress
+- Features: STE & ZCR, 25 ms frame / 10 ms hop  
+- Decision: energy `median(STE) + 0.35×MAD` + ZCR `0.60` quantile; **5-frame** smoothing  
+- **Preliminary (10 dB)**: Precision ≈ **1.00**, Recall ≈ **0.72**, F1 ≈ **0.84**  
+- F1 vs SNR (clean/10/5/0/−5 dB)
+
+## Quickstart (MATLAB)
+- Open `code/Report2_GuanzhenLi.mlx` and **Run All**  
+  or run `code/report2_vad_minimal.m`  
+- Figures -> `figures/`, metrics -> `results/`
+
+## Results (preview)
+<img src="figures/fig1_wave_masks.png" width="48%"><img src="figures/fig2_features_thresholds.png" width="48%"><br>
+<img src="figures/fig3_confusion_matrix.png" width="48%"><img src="figures/fig4_f1_vs_snr.png" width="48%">
+
+## Next
+- Add simple band-pass / spectral pre-processing; evaluate gains  
+- Add hysteresis (double thresholds) to reduce chattering  
+- Advice wanted: adaptive vs frozen thresholds across SNRs
 
 ## References 
 1. Witt, S. M., & Young, S. J. (2000). Phone-level pronunciation scoring and assessment for interactive language learning. Speech communication, 30(2-3), 95-108.
